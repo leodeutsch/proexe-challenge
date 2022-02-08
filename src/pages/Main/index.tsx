@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import {
   Button,
-  Container, Dialog, Paper,
+  Container,
+  Dialog,
+  Paper,
   Stack,
   Typography
 } from '@mui/material';
@@ -12,7 +14,6 @@ import { UserType } from 'src/@types/user.type';
 import CreateUserComponent from 'src/components/CreateUserComponent';
 import DeleteUserComponent from 'src/components/DeleteUserComponent';
 import EditUserComponent from 'src/components/EditUserComponent';
-// import { deleteModal, editModal } from 'src/redux/actions';
 import { getUsersList } from 'src/service/api';
 import theme from 'src/theme';
 
@@ -43,8 +44,6 @@ function Main(props) {
   } = props;
   const [loading, setLoading] = useState<boolean>(true);
   const [createModalOpen, setCreateModalOpen] = useState<boolean>(false);
-  const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
-  const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false);
   const [users, setUsers] = useState<UserType[]>([]);
   const [pageSize, setPageSize] = useState<number>(5);
 
@@ -187,7 +186,11 @@ function Main(props) {
         )}
       </Paper>
       <Dialog open={createModalOpen} onClose={handleCreateModal}>
-        <CreateUserComponent users={users} setUsers={setUsers} setModalState={setCreateModalOpen} />
+        <CreateUserComponent
+          users={users}
+          setUsers={setUsers}
+          setModalState={setCreateModalOpen}
+        />
       </Dialog>
       <Dialog open={editModalState} onClose={closeEditModal}>
         <EditUserComponent users={users} setUsers={setUsers} />

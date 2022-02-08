@@ -14,8 +14,6 @@ import { deleteUser } from 'src/service/api';
 import theme from 'src/theme';
 import TextInput from '../TextInput';
 
-const gridStyle = { borderWidth: 2, borderColor: theme.palette.colors.grey };
-
 function DeleteUserComponent(props): any {
   const {
     userInfo: user, dispatch, users, setUsers,
