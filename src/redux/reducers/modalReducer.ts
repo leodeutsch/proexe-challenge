@@ -5,7 +5,7 @@ const initialState = {
 };
 
 // eslint-disable-next-line default-param-last
-export const modalReducer = (state = initialState, action) => {
+const modalReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'USER':
       return {
@@ -26,3 +26,5 @@ export const modalReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default modalReducer;

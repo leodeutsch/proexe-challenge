@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import Main from '../../pages/Main';
 
-export default function () {
+function MainRouter() {
   return (
     <BrowserRouter>
       <Routes>
@@ -13,3 +13,5 @@ export default function () {
     </BrowserRouter>
   );
 }
+
+export default MainRouter;

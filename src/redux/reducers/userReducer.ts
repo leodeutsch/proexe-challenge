@@ -3,7 +3,7 @@ const initialState = {
 };
 
 // eslint-disable-next-line default-param-last
-export const userReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD':
       return {
@@ -30,3 +30,5 @@ export const userReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default userReducer;
